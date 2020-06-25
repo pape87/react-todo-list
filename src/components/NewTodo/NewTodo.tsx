@@ -8,7 +8,10 @@ import { addToDo } from '../../store/actions/todo';
 
 const NewTodo: React.FC = () => {
 
-  const [newToDo, setNewToDo] = useState({} as ToDo);
+  const [newToDo, setNewToDo] = useState({
+    name: "",
+    description: ""
+  } as ToDo);
   const [, store] = useStore();
 
   function addNewToDo() {

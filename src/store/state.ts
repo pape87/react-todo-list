@@ -1,7 +1,6 @@
 import { Observable } from "rxjs";
-import { Store, MiddlewarePlacement } from "aurelia-store";
+import { Store } from "aurelia-store";
 import { useEffect, useState } from "react";
-import { recordingMiddleware } from "./middlewares/recorder";
 
 export type ToDo = {
   id: string;

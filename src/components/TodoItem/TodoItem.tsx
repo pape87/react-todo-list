@@ -29,7 +29,6 @@ const TodoItem: React.FC<{ t: ToDo }> = (props: { t: ToDo }) => {
 
   function saveEdit() {
     store.dispatch(updateToDo, toDo);
-    console.log(store.state);
     switchMode();
   }
 

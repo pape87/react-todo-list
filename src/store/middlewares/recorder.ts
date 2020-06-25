@@ -1,4 +1,4 @@
-import { State, RecordedAction } from "../state";
+import { State } from "../state";
 import produce from "immer";
 
 export function recordingMiddleware(
