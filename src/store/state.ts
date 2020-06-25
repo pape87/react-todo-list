@@ -1,6 +1,7 @@
 import { Observable } from "rxjs";
-import { Store } from "aurelia-store";
+import { Store, MiddlewarePlacement } from "aurelia-store";
 import { useEffect, useState } from "react";
+import { recordingMiddleware } from "./middlewares/recorder";
 
 export type ToDo = {
   id: string;
@@ -9,12 +10,21 @@ export type ToDo = {
   creationDate: string;
 }
 
+export type RecordedAction = {
+  action: string;
+  value: any;
+}
+
 export type State = {
   toDos: ToDo[];
+  isRecording: boolean;
+  recordedActions: RecordedAction[];
 }
 
 export const INITIAL_STATE = {
-  toDos: []
+  toDos: [],
+  isRecording: false,
+  recordedActions: []
 } as State;
 
 

@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 import './TodoItem.css';
 
-import { ToDo, store } from '../../store/state';
+import { ToDo, useStore } from '../../store/state';
 import { deleteToDo, updateToDo } from '../../store/actions/todo';
 
 
 const TodoItem: React.FC<{ t: ToDo }> = (props: { t: ToDo }) => {
   const [toDo, setToDo] = useState(props.t);
   const [mode, setMode] = useState("view")
+  const [, store] = useStore();
+
   useEffect(() => {
     setToDo(props.t);
   }, [props.t]);
