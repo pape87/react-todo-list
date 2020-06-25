@@ -4,19 +4,20 @@ import './TodoList.css';
 
 import { useStore, ToDo } from '../../store/state';
 import { deleteToDo } from '../../store/actions/todo';
+import TodoItem from '../TodoItem/TodoItem';
 
 const TodoList: React.FC = () => {
   const [state, store] = useStore();
 
-  function removeToDo(id: string){
+  function removeToDo(id: string) {
     store.dispatch(deleteToDo, id);
   }
-  
+
   return (
     <div className="TodoList" data-testid="TodoList">
       <ul>
         {
-          state.toDos.map((x: ToDo, index: number) => [<li key={index}>{x.name} - {x.description}<button onClick={() => removeToDo(x.id)}>Delete</button></li>])
+          state.toDos.map((x: ToDo, index: number) => [<TodoItem key={index} t={x}></TodoItem>])
         }
       </ul>
     </div>

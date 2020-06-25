@@ -15,8 +15,16 @@ export function deleteToDo(state: State, id: string) {
   });
 }
 
+export function updateToDo(state: State, toDo: ToDo) {
+  const index = state.toDos.findIndex((x) => x.id === toDo.id);
+  return produce(state, draftState => {
+    draftState.toDos[index] = toDo;
+  });
+}
+
 registerToStore(
   store,
   addToDo,
-  deleteToDo
+  deleteToDo,
+  updateToDo
 );
