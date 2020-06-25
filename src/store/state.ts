@@ -2,8 +2,15 @@ import { Observable } from "rxjs";
 import { Store } from "aurelia-store";
 import { useEffect, useState } from "react";
 
+export type ToDo = {
+  id: string;
+  name: string;
+  description: string;
+  creationDate: string;
+}
+
 export type State = {
-  toDos: string[];
+  toDos: ToDo[];
 }
 
 export const INITIAL_STATE = {

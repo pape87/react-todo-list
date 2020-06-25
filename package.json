@@ -10,6 +10,7 @@
     "@types/node": "^12.12.47",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
+    "@types/uuid": "^8.0.0",
     "aurelia-pal": "^1.8.2",
     "aurelia-pal-browser": "^1.8.1",
     "aurelia-store": "^1.6.0",
@@ -17,7 +18,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "uuid": "^8.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
