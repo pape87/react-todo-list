@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { initialize } from "aurelia-pal-browser";
-
+import { localStorageMiddleware } from 'aurelia-store';
+ 
 import './App.css';
 import TodoList from './components/TodoList/TodoList';
 import NewTodo from './components/NewTodo/NewTodo';
@@ -14,6 +15,7 @@ initialize();
 function App() {
   const [, store] = useStore();
   store.registerMiddleware(recordingMiddleware, MiddlewarePlacement.After);
+  store.registerMiddleware(localStorageMiddleware, MiddlewarePlacement.After, { key: 'todo-app' });
 
   return (
     <div className="App">

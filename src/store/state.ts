@@ -34,8 +34,10 @@ export const INITIAL_STATE = {
   }
 } as State;
 
+const storedStateString = localStorage.getItem("todo-app");
+const initialState = storedStateString ? JSON.parse(storedStateString) as State : INITIAL_STATE;
 
-export const store = new Store<State>(INITIAL_STATE, {});
+export const store = new Store<State>(initialState, {});
 
 export const useStore = <T = State>(options?: {
   selector: (state: Observable<State>) => Observable<T>,
