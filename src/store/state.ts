@@ -9,6 +9,11 @@ export type ToDo = {
   creationDate: string;
 }
 
+export type RecordingState = {
+  recordedActions: RecordedAction[];
+  recordingInitialToDoState: ToDo[];
+}
+
 export type RecordedAction = {
   action: string;
   value: any;
@@ -17,13 +22,16 @@ export type RecordedAction = {
 export type State = {
   toDos: ToDo[];
   isRecording: boolean;
-  recordedActions: RecordedAction[];
+  recordingState: RecordingState;
 }
 
 export const INITIAL_STATE = {
   toDos: [],
   isRecording: false,
-  recordedActions: []
+  recordingState: {
+    recordedActions: [],
+    recordingInitialToDoState: []
+  }
 } as State;
 
 

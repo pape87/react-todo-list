@@ -9,7 +9,7 @@ export function recordingMiddleware(
 ) {
   if (original?.isRecording && current.isRecording) {
     const updatedState = produce(current, draftState => {
-      draftState.recordedActions.push({ action: action.name, value: action.params });
+      draftState.recordingState.recordedActions.push({ action: action.name, value: action.params });
     });
     return updatedState;
   }

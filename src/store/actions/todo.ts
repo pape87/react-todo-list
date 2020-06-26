@@ -22,9 +22,9 @@ export function updateToDo(state: State, toDo: ToDo) {
   });
 }
 
-export function clearToDos(state: State){
+export function setToDoList(state: State, toDos: ToDo[]){
   return produce(state, draftState => {
-    draftState.toDos = [];
+    draftState.toDos = toDos;
   });
 }
 
@@ -33,5 +33,5 @@ registerToStore(
   addToDo,
   deleteToDo,
   updateToDo,
-  clearToDos
+  setToDoList
 );
